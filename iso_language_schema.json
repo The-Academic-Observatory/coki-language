@@ -1,0 +1,14 @@
+[
+    {
+        "name": "name",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The name of the language in English"
+    },
+    {
+        "name": "code",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The ISO code for the language"
+    }
+]

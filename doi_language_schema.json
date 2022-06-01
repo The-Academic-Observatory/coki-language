@@ -1,0 +1,26 @@
+[
+    {
+        "name": "doi",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The DOI, in uppercase"
+    },
+    {
+        "name": "title",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The title of the research output"
+    },
+    {
+        "name": "language",
+        "type": "STRING",
+        "mode": "NULLABLE",
+        "description": "The most probable language prediction, represented with an ISO language code"
+    },
+    {
+        "name": "score",
+        "type": "FLOAT",
+        "mode": "NULLABLE",
+        "description": "The probability score of the language prediction"
+    }
+]
