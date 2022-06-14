@@ -120,8 +120,22 @@ def graphs():
                   color='name')
     fig.write_image(GRAPH_DIR / 'line_counts_overtime_largelang.png')
 
+    # Languages Line Graph 2000 - 2020 proportions of total
+    filtered = downloaded[downloaded.code.isin(LARGE_LANGUAGES + ['en'])]
+    all_by_year = filtered.groupby(['name', 'published_year']).sum().reset_index()
+    year_totals = downloaded.groupby('published_year').sum().to_dict()['total']
+    all_by_year['year_total'] = all_by_year['published_year'].map(year_totals)
+    all_by_year['pc_of_year'] = all_by_year.total / all_by_year.year_total * 100
+    all_by_year.sort_values(['published_year', 'pc_of_year'], ascending=False, inplace=True)
+    fig = px.area(all_by_year,
+                  x='published_year',
+                  y='pc_of_year',
+                  color='name')
+    fig.write_image(GRAPH_DIR / 'area_pc_overtime_largelang.png')
+
+
     # Languages Line Graph 2000 - 2020 - Journal Articles Only
-    filtered = downloaded[(downloaded.code.isin(LARGE_LANGUAGES)) &
+    filtered = downloaded[(downloaded.code.isin(LARGE_LANGUAGES + ['en'])) &
                           (downloaded.crossref_type == 'journal-article')]
     all_by_year = filtered.groupby(['name', 'published_year']).sum().reset_index()
     fig = px.line(all_by_year,
@@ -129,6 +143,7 @@ def graphs():
                   y='total',
                   color='name')
     fig.write_image(GRAPH_DIR / 'line_counts_overtime_journal-articles_largelang.png')
+
 
     # Set up percentages for each year and for all years
     combined_years = downloaded.groupby(['code', 'name']).sum().reset_index()
