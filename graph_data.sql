@@ -10,6 +10,7 @@ WITH
       languages.score,
       apc,
       crossref.published_year,
+      crossref.type,
       unpaywall.* EXCEPT(doi),
       open_citations.* EXCEPT(doi)
 
@@ -23,6 +24,7 @@ WITH
 
 SELECT
   published_year,
+  type as crossref_type,
   code,
   name,
   COUNT(DISTINCT doi) as total,
@@ -41,5 +43,5 @@ SELECT
   AVG(citations_two_years) as mean_citations2y
 
   FROM mapped_dois
-  GROUP BY published_year, code, name
+  GROUP BY published_year, code, name, type
   ORDER BY published_year DESC, name ASC
