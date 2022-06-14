@@ -34,6 +34,13 @@ LARGE_LANGUAGES = [
     'ar'
 ]
 
+SCANDICS = [
+    'da',
+    'sv',
+    'no',
+    'fi'
+]
+
 if not GRAPH_DIR.is_dir():
     os.mkdir(GRAPH_DIR)
 
@@ -169,6 +176,26 @@ def graphs():
                  x='name',
                  y=['pc_diamond', 'pc_doaj_apc', 'pc_hybrid', 'pc_bronze', 'pc_green_only', 'pc_closed'])
     fig.write_image(GRAPH_DIR / 'stackedbar_oaclasses_2020_largelang.png')
+
+    # OA Classes for all time, Scandics
+    fig = px.bar(combined_years[combined_years.code.isin(SCANDICS + ['en'])],
+                 x='name',
+                 y=['pc_diamond', 'pc_doaj_apc', 'pc_hybrid', 'pc_bronze', 'pc_green_only', 'pc_closed'])
+    fig.write_image(GRAPH_DIR / 'stackedbar_oaclasses_alltime_scandics.png')
+
+    # OA Classes for 2020, Scandics
+    fig = px.bar(by_years[(by_years.code.isin(SCANDICS + ['en'])) &
+                          (by_years.published_year == 2020)],
+                 x='name',
+                 y=['pc_diamond', 'pc_doaj_apc', 'pc_hybrid', 'pc_bronze', 'pc_green_only', 'pc_closed'])
+    fig.write_image(GRAPH_DIR / 'stackedbar_oaclasses_2020_scandics.png')
+
+    # OA Classes for 2020, Scandics
+    fig = px.bar(by_years[(by_years.code.isin(['en', 'de', 'fr', 'nl', 'no', 'da', 'hu', 'pl', 'bg'])) &
+                          (by_years.published_year == 2020)],
+                 x='name',
+                 y=['pc_diamond', 'pc_doaj_apc', 'pc_hybrid', 'pc_bronze', 'pc_green_only', 'pc_closed'])
+    fig.write_image(GRAPH_DIR / 'stackedbar_oaclasses_2020_northeuropecompare.png')
 
 
 def concatenate_others(df: pd.DataFrame,
