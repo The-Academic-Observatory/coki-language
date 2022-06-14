@@ -140,7 +140,6 @@ def graphs():
                   color='name')
     fig.write_image(GRAPH_DIR / 'area_pc_overtime_largelang.png')
 
-
     # Languages Line Graph 2000 - 2020 - Journal Articles Only
     filtered = downloaded[(downloaded.code.isin(LARGE_LANGUAGES + ['en'])) &
                           (downloaded.crossref_type == 'journal-article')]
@@ -150,7 +149,6 @@ def graphs():
                   y='total',
                   color='name')
     fig.write_image(GRAPH_DIR / 'line_counts_overtime_journal-articles_largelang.png')
-
 
     # Set up percentages for each year and for all years
     combined_years = downloaded.groupby(['code', 'name']).sum().reset_index()
@@ -196,6 +194,27 @@ def graphs():
                  x='name',
                  y=['pc_diamond', 'pc_doaj_apc', 'pc_hybrid', 'pc_bronze', 'pc_green_only', 'pc_closed'])
     fig.write_image(GRAPH_DIR / 'stackedbar_oaclasses_2020_northeuropecompare.png')
+
+    # Mean citations for journal articles by language for 2020
+    graph_data = downloaded[(downloaded.published_year == 2020) &
+                            (downloaded.crossref_type == 'journal-article') &
+                            (downloaded.code.isin(LARGE_LANGUAGES + ['en']))]
+    graph_data.sort_values('total', ascending=False, inplace=True)
+    fig = px.bar(graph_data,
+                 x='name',
+                 y='mean_citations')
+    fig.write_image(GRAPH_DIR / 'bar_meancites_2020_large.png')
+
+    # Mean citations at 2years for journal articles by language for 2000-2019
+    graph_data = downloaded[(downloaded.published_year.isin(range(2000, 2020))) &
+                            (downloaded.crossref_type == 'journal-article') &
+                            (downloaded.code.isin(LARGE_LANGUAGES + ['en']))]
+    graph_data.sort_values(['published_year', 'total'], ascending=False, inplace=True)
+    fig = px.line(graph_data,
+                  x='published_year',
+                  y='mean_citations2y',
+                  color='name')
+    fig.write_image(GRAPH_DIR / 'line_meancites2y_2000-2019_large.png')
 
 
 def concatenate_others(df: pd.DataFrame,
