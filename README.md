@@ -1,5 +1,5 @@
 # COKI Language Detection
-This project contains a script to detect the language of academic papers based on their titles and abstracts.
+This project contains scripts to detect the language of academic papers based on their titles and abstracts.
 
 ## 1. Pre-requisites
 * Python 3.8
@@ -112,4 +112,4 @@ Upload data to cloud storage bucket:
 gsutil -m cp -R . gs://my-bucket/coki-language
 ```
 
-Go to [section 2.3](#2.3.-loading-into-bigquery) for instructions on how to load the data into BigQuery.
+Go to [section 2.3](#23-loading-into-bigquery) for instructions on how to load the data into BigQuery.
