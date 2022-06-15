@@ -1,6 +1,5 @@
 # COKI Language Detection
-This project contains a script to detect the language of academic papers based on their titles and abstracts. The 
-instructions below 
+This project contains a script to detect the language of academic papers based on their titles and abstracts.
 
 ## 1. Pre-requisites
 * Python 3.8
