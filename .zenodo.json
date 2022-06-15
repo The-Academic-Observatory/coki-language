@@ -1,6 +1,6 @@
 {
   "title": "COKI Language Python Scripts",
-  "description": "<p>This project contains scripts to detect the language of academic papers based on their titles and abstracts.</p>\n\n<p>See the Github project for more details:&nbsp;https://github.com/The-Academic-Observatory/coki-language</p>",
+  "description": "<p>This project contains scripts to detect the language of academic papers based on their titles and abstracts.</p>\n\n<p>See the Github project for more details:&nbsp;<a href=\"https://github.com/The-Academic-Observatory/coki-language\">https://github.com/The-Academic-Observatory/coki-language</a></p>",
   "communities": [
     {
       "identifier": "coki"
