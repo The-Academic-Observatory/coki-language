@@ -1,0 +1,28 @@
+{
+  "title": "COKI Language Python Scripts",
+  "communities": [
+    {
+      "identifier": "coki"
+    }
+  ],
+  "keywords": [
+    "academic publications",
+    "language",
+    "coki"
+  ],
+  "license": {
+    "id": "Apache-2.0"
+  },
+  "creators": [
+    {
+      "orcid": "0000-0002-5094-3571",
+      "affiliation": "Centre for Culture and Technology, Curtin University",
+      "name": "James P. Diprose"
+    },
+    {
+      "orcid": "0000-0002-0068-716X",
+      "affiliation": "Centre for Culture and Technology, Curtin University",
+      "name": "Cameron Neylon"
+    }
+  ]
+}
