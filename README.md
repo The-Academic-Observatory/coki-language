@@ -1,6 +1,10 @@
 # COKI Language Detection
 This project contains scripts to detect the language of academic papers based on their titles and abstracts and to
-analyse them. 
+analyse them.
+
+The data produced by these scripts is available on Zenodo as the [COKI Language Dataset](https://zenodo.org/record/6636625) and also publicly accessible in [BigQuery](https://cloud.google.com/bigquery):
+* [coki-data-share.language.doi_language](https://console.cloud.google.com/bigquery?referrer=search&project=coki-data-share&ws=!1m5!1m4!4m3!1scoki-data-share!2slanguage!3sdoi_language)
+* [coki-data-share.language.iso_language](https://console.cloud.google.com/bigquery?referrer=search&project=coki-data-share&ws=!1m5!1m4!4m3!1scoki-data-share!2slanguage!3siso_language)
 
 See the `output_graphs` folder for charts and aggregated data.
 
@@ -10,8 +14,7 @@ See the `output_graphs` folder for charts and aggregated data.
 * bq: https://cloud.google.com/bigquery/docs/bq-command-line-tool
 
 ## 2. Loading Data into BigQuery
-We have already run these scripts and uploaded the data to Zenodo, see the [COKI Language Dataset](https://doi.org/10.5281/zenodo.6636624).
-The following are instructions for downloading and loading this data into BigQuery for analysis.
+The following are instructions for manually downloading and loading this data into BigQuery for analysis.
 
 ### 2.1. Setup
 Install zenodo-get, which is used to fetch the URLs for the Zenodo archive:
