@@ -1,6 +1,6 @@
 {
-  "title": "COKI Language Python Scripts",
-  "description": "<p>This project contains scripts to detect the language of academic papers based on their titles and abstracts.</p>\n\n<p>See the Github project for more details:&nbsp;<a href=\"https://github.com/The-Academic-Observatory/coki-language\">https://github.com/The-Academic-Observatory/coki-language</a></p>",
+  "title": "COKI Language Detection",
+  "description": "<p>This project contains scripts to detect the language of academic papers based on their titles and abstracts and to analyse them.</p>\n\n<p>See the Github project for more details:&nbsp;<a href=\"https://github.com/The-Academic-Observatory/coki-language\">https://github.com/The-Academic-Observatory/coki-language</a></p>",
   "communities": [
     {
       "identifier": "coki"
@@ -19,6 +19,11 @@
       "orcid": "0000-0002-5094-3571",
       "affiliation": "Centre for Culture and Technology, Curtin University",
       "name": "James P. Diprose"
+    },
+    {
+      "orcid": "0000-0002-5965-6560",
+      "affiliation": "Utrecht University",
+      "name": "Bianca Kramer"
     },
     {
       "orcid": "0000-0002-0068-716X",
